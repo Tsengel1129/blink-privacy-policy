@@ -1,47 +1,230 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Privacy Policy – Blink</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Privacy Policy • Dhub</title>
+  <style>
+    :root{
+      --bg: #0b0f19;
+      --card: rgba(255,255,255,.06);
+      --border: rgba(255,255,255,.12);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --brand: #6aa9ff;
+      --ok: #41d37e;
+      --warn: #ffcc66;
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius: 18px;
+      --max: 980px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg: #f7f8fb;
+        --card: rgba(0,0,0,.04);
+        --border: rgba(0,0,0,.10);
+        --text: rgba(0,0,0,.88);
+        --muted: rgba(0,0,0,.60);
+        --brand: #0b63ff;
+        --shadow: 0 18px 60px rgba(10,20,40,.10);
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(106,169,255,.20), transparent 60%),
+                  radial-gradient(900px 500px at 90% 20%, rgba(65,211,126,.16), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max); margin:0 auto; padding:32px 18px 80px}
+    .topbar{
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+      padding:18px 18px; border:1px solid var(--border); background:var(--card);
+      border-radius: var(--radius); box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      position: sticky; top: 14px; z-index: 5;
+    }
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(106,169,255,.95), rgba(65,211,126,.85));
+      display:grid; place-items:center; font-weight:800; color:white;
+      box-shadow: 0 12px 28px rgba(0,0,0,.25);
+      user-select:none;
+    }
+    .brand h1{font-size:16px; margin:0}
+    .brand p{margin:0; font-size:12px; color:var(--muted)}
+    .pill{
+      display:inline-flex; gap:8px; align-items:center;
+      padding:8px 12px; border:1px solid var(--border);
+      border-radius: 999px; font-size:12px; color:var(--muted);
+      background: rgba(255,255,255,.03);
+    }
+    .hero{
+      margin-top:18px;
+      padding:26px 22px;
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      box-shadow: var(--shadow);
+    }
+    .hero h2{margin:0 0 6px; font-size:26px; letter-spacing:-0.4px}
+    .hero .meta{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+    @media (min-width: 900px){
+      .grid{grid-template-columns: 320px 1fr}
+    }
+    .card{
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding:18px;
+    }
+    .card h3{margin:0 0 10px; font-size:14px; color:var(--muted); text-transform:uppercase; letter-spacing:.12em}
+    .toc a{
+      display:block; padding:10px 12px; margin:6px 0;
+      border-radius: 12px;
+      border:1px solid transparent;
+      color: var(--text);
+      background: rgba(255,255,255,.03);
+    }
+    .toc a:hover{border-color: var(--border); text-decoration:none}
+    .content h4{margin:18px 0 8px; font-size:16px}
+    .content p, .content li{color: var(--muted)}
+    .content ul{margin:8px 0 0 18px}
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border-radius: 12px;
+      border:1px solid var(--border);
+      background: rgba(255,255,255,.03);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footer{
+      margin-top:18px; text-align:center; color:var(--muted); font-size:12px;
+    }
+    .hr{height:1px; background: var(--border); margin:14px 0}
+    code{background: rgba(255,255,255,.08); padding:2px 6px; border-radius:8px; color: var(--text)}
+  </style>
 </head>
+
 <body>
-  <h1>Privacy Policy</h1>
-  <p>Last updated: February 2026</p>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">D</div>
+        <div>
+          <h1>Dhub • Privacy Policy</h1>
+          <p>Simple, transparent, and readable</p>
+        </div>
+      </div>
+      <div class="pill">🛡️ Updated: <strong style="color:var(--text); font-weight:700;">2026-02-07</strong></div>
+    </div>
 
-  <p>
-    Blink is an internal communication application designed for closed testing and limited internal use.
-  </p>
+    <section class="hero">
+      <h2>Privacy Policy</h2>
+      <p style="color:var(--muted); margin:0;">
+        This Privacy Policy explains how <strong>[Company Name]</strong> (“we”, “our”) collects, uses, and protects
+        your information when you use <strong>[App Name]</strong> (“the App”).
+      </p>
+      <div class="meta">
+        <span class="badge">📧 Contact: <a href="mailto:[Email]">[Email]</a></span>
+        <span class="badge">🌍 Website: <a href="[Website URL]">[Website URL]</a></span>
+        <span class="badge">✅ Scope: Closed testing (Alpha)</span>
+      </div>
+    </section>
 
-  <h2>Information We Collect</h2>
-  <p>
-    Blink may collect basic account information such as login credentials for authentication purposes.
-    No financial, health, or sensitive personal data is collected.
-  </p>
+    <div class="grid">
+      <aside class="card toc">
+        <h3>Quick navigation</h3>
+        <a href="#collect">📌 Information we collect</a>
+        <a href="#use">⚙️ How we use information</a>
+        <a href="#share">🤝 Sharing</a>
+        <a href="#security">🔐 Security</a>
+        <a href="#children">🧒 Children</a>
+        <a href="#changes">📝 Changes</a>
+        <a href="#contact">☎️ Contact</a>
+        <div class="hr"></div>
+        <div class="badge">Tip: Keep this URL in Google Play Console ✅</div>
+      </aside>
 
-  <h2>How We Use Information</h2>
-  <p>
-    Information is used solely to provide core app functionality including authentication, chat features,
-    and basic user profile management.
-  </p>
+      <main class="card content">
+        <h3 style="margin:0 0 10px; font-size:14px; color:var(--muted); text-transform:uppercase; letter-spacing:.12em">Policy details</h3>
 
-  <h2>Data Sharing</h2>
-  <p>
-    Blink does not sell, trade, or share user data with third parties.
-  </p>
+        <h4 id="collect">📌 Information we collect</h4>
+        <p>
+          We collect only what is necessary to operate the App and improve stability during testing.
+          Depending on your usage, this may include:
+        </p>
+        <ul>
+          <li><strong>Account information</strong> (e.g., login identifier) if you sign in.</li>
+          <li><strong>App activity</strong> (e.g., basic feature usage for debugging).</li>
+          <li><strong>Device information</strong> (e.g., OS version, device model) for compatibility.</li>
+          <li><strong>Crash/diagnostic data</strong> to improve performance and stability.</li>
+        </ul>
 
-  <h2>Children’s Privacy</h2>
-  <p>
-    Blink is not intended for children under the age of 13.
-  </p>
+        <h4 id="use">⚙️ How we use information</h4>
+        <ul>
+          <li>To provide core features (authentication, navigation, chat/profile UI).</li>
+          <li>To diagnose errors and improve stability (e.g., crash logs).</li>
+          <li>To improve user experience during closed testing.</li>
+        </ul>
 
-  <h2>Security</h2>
-  <p>
-    Reasonable technical measures are taken to protect user data during testing.
-  </p>
+        <h4 id="share">🤝 Sharing</h4>
+        <p>
+          We do not sell your personal data. We may share limited information only when required to operate the App,
+          such as analytics/crash reporting tools (if enabled), or to comply with legal obligations.
+        </p>
 
-  <h2>Contact</h2>
-  <p>
-    If you have any questions about this Privacy Policy, please contact the app administrator.
-  </p>
+        <h4 id="security">🔐 Security</h4>
+        <p>
+          We use reasonable safeguards to protect information. No system is 100% secure, but we continuously improve
+          protection and minimize stored data where possible.
+        </p>
+
+        <h4 id="children">🧒 Children</h4>
+        <p>
+          The App is not intended for children under 13. If you believe a child provided personal information, contact us
+          and we will take appropriate steps to remove it.
+        </p>
+
+        <h4 id="changes">📝 Changes</h4>
+        <p>
+          We may update this Privacy Policy from time to time. The “Updated” date at the top reflects the latest version.
+        </p>
+
+        <h4 id="contact">☎️ Contact</h4>
+        <p>
+          If you have questions, contact us at <a href="mailto:[Email]">[Email]</a>.
+        </p>
+
+        <div class="hr"></div>
+        <p style="margin:0; color:var(--muted); font-size:12px;">
+          Last updated: <strong style="color:var(--text)">2026-02-07</strong> • Document for Google Play Console listing.
+        </p>
+      </main>
+    </div>
+
+    <div class="footer">
+      © <span id="y"></span> [Company Name]. All rights reserved.
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
